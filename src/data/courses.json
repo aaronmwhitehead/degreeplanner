@@ -1,0 +1,416 @@
+[
+  {
+    "Dept": "MEEN",
+    "Crse": 210,
+    "Cred": 2,
+    "Title": "GEOMETRIC MODELING",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 221,
+    "Cred": 3,
+    "Title": "STATICS & PARTICLE DYNAM",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 222,
+    "Cred": 3,
+    "Title": "MATERIALS SCIENCE",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 225,
+    "Cred": 3,
+    "Title": "ENGINEERING MECHANICS",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 260,
+    "Cred": 3,
+    "Title": "MECHANICAL MEASUREMENTS",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 285,
+    "Cred": 1,
+    "Title": "DIRECTED STUDIES",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 289,
+    "Cred": 1,
+    "Title": "SPTP: INTRO MEEN",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 291,
+    "Cred": 1,
+    "Title": "RESEARCH",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 291,
+    "Cred": 2,
+    "Title": "RESEARCH",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 315,
+    "Cred": 3,
+    "Title": "PRIN OF THERMODYNAMICS",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 344,
+    "Cred": 3,
+    "Title": "FLUID MECHANICS",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 345,
+    "Cred": 1,
+    "Title": "FLUID MECHANICS LAB",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 357,
+    "Cred": 3,
+    "Title": "ENGR ANALYSIS FOR MECH",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 360,
+    "Cred": 3,
+    "Title": "MTLS & MFG SELECT IN DSN",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 361,
+    "Cred": 1,
+    "Title": "MTLS & MFG IN DESIGN LAB",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 363,
+    "Cred": 3,
+    "Title": "DYNAMICS AND VIBRATIONS",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 364,
+    "Cred": 3,
+    "Title": "DYNAMIC SYST AND CONTROL",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 368,
+    "Cred": 3,
+    "Title": "SOLID MECH IN MEC DESIGN",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 381,
+    "Cred": 1,
+    "Title": "SEMINAR",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 401,
+    "Cred": 3,
+    "Title": "INTRO TO MECH ENGR DESGN",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 402,
+    "Cred": 3,
+    "Title": "INTERMEDIATE DESIGN",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 404,
+    "Cred": 3,
+    "Title": "ENGINEERING LABORATORY",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 408,
+    "Cred": 3,
+    "Title": "INTRO TO ROBOTICS",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 421,
+    "Cred": 3,
+    "Title": "THERMO FLUID ANLY & DESN",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 431,
+    "Cred": 3,
+    "Title": "ADV SYST DYNAMIC & CNTRL",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 432,
+    "Cred": 3,
+    "Title": "AUTOMOTIVE ENGR",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 433,
+    "Cred": 3,
+    "Title": "MECHATRONICS",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 434,
+    "Cred": 3,
+    "Title": "DYN & MOD MECHTRO SYS",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 437,
+    "Cred": 3,
+    "Title": "PRIN BLDG ENERGY ANALY",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 440,
+    "Cred": 3,
+    "Title": "BIO INSPIRED ENGR DESIGN",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 441,
+    "Cred": 3,
+    "Title": "DESN MECH COMP & SYSTM",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 442,
+    "Cred": 3,
+    "Title": "COMPUTER AIDED ENGR",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 445,
+    "Cred": 3,
+    "Title": "ENGR APP OF SOLID MECHANICS",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 451,
+    "Cred": 3,
+    "Title": "VISCOELASTIC MATERIALS",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 454,
+    "Cred": 3,
+    "Title": "TRIBOLOGY",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 458,
+    "Cred": 3,
+    "Title": "PROCESS & CHAR POLYMER",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 461,
+    "Cred": 3,
+    "Title": "HEAT TRANSFER",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 464,
+    "Cred": 1,
+    "Title": "HEAT TRANSFER LAB",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 469,
+    "Cred": 3,
+    "Title": "ALTERNATIVE ENERGY CONVERSION",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 472,
+    "Cred": 3,
+    "Title": "GAS DYNAMICS",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 475,
+    "Cred": 3,
+    "Title": "MATERIALS IN DESIGN",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 477,
+    "Cred": 3,
+    "Title": "AIR POLLUTION ENGINEERIN",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 485,
+    "Cred": 1,
+    "Title": "DIRECTED STUDIES",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 485,
+    "Cred": 3,
+    "Title": "DIRECTED STUDIES",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 489,
+    "Cred": 1,
+    "Title": "SPTP: ENG MNG INDUSTRY",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  },
+  {
+    "Dept": "MEEN",
+    "Crse": 491,
+    "Cred": 1,
+    "Title": "RESEARCH",
+    "Prereqs": "",
+    "Coreqs": "",
+    "Plans": ""
+  }
+]
