@@ -28,25 +28,25 @@ class CheckAdd extends Component {
 			checkTab = " "; 
 
 			addTab = 
-			<div className="add-content">
-				<div className="add-content-header">
+			<div className="add-content info">
+				<div className="add-content-header header">
 					<i class="fas fa-arrow-left" onClick={this.toggleTabs}></i>
-						Add Semester/Course
+					<div className="add-content-title">Add Semester/Course</div>
+					<div className="extra"></div>
 				</div>
-				
+				<div></div>
 			</div>;
 		} 
 
 		else {
 		
 			checkTab = 
-			<div className="check-courses">
-				<div className="check-courses-header">
-					<i class="fas fa-plus" onClick={this.toggleTabs}></i>
-					<div className="add-content-body">Add a semester or course by clicking the + </div>
-					<span className="output-text">All of your classes are good.</span> 
+			<div className="check-courses info">
+				<div className="check-courses-header header">
+					<i className="fas fa-plus" onClick={this.toggleTabs}></i>
 				</div>
-				<div className="check-courses-body"></div>
+				<div className="add-content-body">Add a semester or course by clicking the + </div>
+				<div className="check-courses-body">All of your classes are good.</div>
 			</div>; 
 
 			addTab = " ";
@@ -72,23 +72,40 @@ class Course extends Component {
 // A Semester holds a default number of courses
 function Semester(props) {
 	return(
-		<div className={props.className}></div>
-	); 
+		<div className={props.className}>
+			<div className="TEST test1">
+				<div className="TEST-abbr">CRSE-100</div>
+				<div className="TEST-name">Mfg. in Crse. Desn. & Analysis</div>
+			</div>
+			<div className="TEST test2">
+				<div className="TEST-abbr">CRSE-200</div>
+				<div className="TEST-name">Mfg. in Crse. Desn. & Analysis: Cool stuff</div>
+			</div>
+			<div className="TEST test3">
+				<div className="TEST-abbr">CRSE-300</div>
+				<div className="TEST-name">Learning to Code 101: An Introduction</div>
+			</div>
+			<div className="TEST test4">
+				<div className="TEST-abbr">CRSE-400</div>
+				<div className="TEST-name">How to Make an A+ in College</div>
+			</div>
+		</div>
+	); 	
 }
 
 // SemesterList holds each of the semesters
 class SemesterList extends Component {
 	render() {
 		return(
-			<div className="semester-list main"> Semsters
-				<Semester className="semester-1"/>
-				<Semester className="semester-2"/>
-				<Semester className="semester-3"/>
-				<Semester className="semester-4"/>
-				<Semester className="semester-5"/>
-				<Semester className="semester-6"/>
-				<Semester className="semester-7"/>
-				<Semester className="semester-8"/>
+			<div className="semester-list main">
+				<Semester className="semester semester-1"/>
+				<Semester className="semester semester-2"/>
+				<Semester className="semester semester-3"/>
+				<Semester className="semester semester-4"/>
+				<Semester className="semester semester-5"/>
+				<Semester className="semester semester-6"/>
+				<Semester className="semester semester-7"/>
+				<Semester className="semester semester-8"/>
 			</div>
 		);
 	}
@@ -102,8 +119,8 @@ class App extends Component {
 		<div className="App">
 			<SemesterList />
 			<CheckAdd />
-			<div className="footer main">Hours: </div>
-			<div className="btn main">Check Courses</div>
+			<div className="hours-box main">Hours: </div>
+			<div className="check-courses-btn main">Check Courses</div>
 		</div>
     );
   }
