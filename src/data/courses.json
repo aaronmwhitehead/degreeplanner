@@ -73,15 +73,6 @@
   },
   {
     "Dept": "MEEN",
-    "Crse": 291,
-    "Cred": 2,
-    "Title": "RESEARCH",
-    "Prereqs": "",
-    "Coreqs": "",
-    "Plans": ""
-  },
-  {
-    "Dept": "MEEN",
     "Crse": 315,
     "Cred": 3,
     "Title": "PRIN OF THERMODYNAMICS",
@@ -381,15 +372,6 @@
     "Dept": "MEEN",
     "Crse": 485,
     "Cred": 1,
-    "Title": "DIRECTED STUDIES",
-    "Prereqs": "",
-    "Coreqs": "",
-    "Plans": ""
-  },
-  {
-    "Dept": "MEEN",
-    "Crse": 485,
-    "Cred": 3,
     "Title": "DIRECTED STUDIES",
     "Prereqs": "",
     "Coreqs": "",

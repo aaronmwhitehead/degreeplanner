@@ -1,42 +1,208 @@
+html {
+	font-family: 'Lato', sans-serif;
+}
+
 .App {
 	display: flex; 
 	padding: 15px; 
-	height: 95vh; 
-	flex-wrap: wrap; 
+	flex-wrap: wrap;  
+	overflow: auto; 
 
 	.main {
 		box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12); 
-		padding: 5px; 
+		flex: 1 0 50%; 
+		display: flex; 
 	}
 
-	.semester-list {
-		width: 69%; 
-		height: 82vh; 
-		margin: 0 15px 0; 
+	.container {
+		flex: 0 25%;
+	}
+
+	.semester-list {  
+		display: flex; 
+		margin-right: 15px; 
+		justify-content: space-between; 
+		max-height: 95vh; 
+		overflow: auto; 
+    	flex-wrap: wrap;
+
+    	.year {
+    		display: flex; 
+    		flex: 1;
+    		justify-content: center;
+    		padding: 2px 0px; 
+    		font-size: 1.1em; 
+    		color: #aaa;
+    		background: #eee;
+    	}
 	}
 
 	.info-box {
-		width: 26%; 
-		height: 82vh; 	
+		height: 86vh; 
 	}
 
-	.footer {
-		display: flex; 
-		flex-direction: column; 
-		justify-content: center; 
-		width: 69%; 
-		height: 8vh; 
-		margin: 15px 15px 0;
-		align-self: flex-end; 
+	.hours-box {
+		align-items: center;  
+		margin-right: 15px; 
+		margin-top: 15px; 
+		padding: 5px; 
 	}
 
-	.btn {
+	.check-courses-btn {
 		display: flex; 
 		flex-direction: column; 
 		justify-content: center;  
-		width: 26%; 
-		height: 8vh; 
-		align-self: flex-end; 
+		align-items: center; 
+		cursor: pointer; 
+		margin-top: 3px; 
+		height: 9%; 
 	}
 
+	.fas {
+		cursor: pointer;  
+	}
+
+	.check-courses-body {
+		overflow: auto; 
+	}
+
+	.add-content {
+		position: absolute;
+		background: rgba(0,0,0,.4);
+		width: 100vw;
+		height: 100vh;
+		left: 0; 
+		top: 0;
+		z-index: 1; 
+		display: flex; 
+		align-items: center;
+		justify-content: center; 
+		visibility: hidden;
+
+		.add-content-modal {
+			width: 25vw;
+
+			.add-content-body {
+				width: 25vw;
+				height: 30vh; 
+				background: white;
+				// padding: 5px; 
+			}
+			.add-summer {
+				display: flex; 
+				align-items: center;
+				.add-summer-title {
+					width: 90px;
+				}
+			}
+		}
+	}
+
+	.check-courses-body-info {	
+		align-self: center; 
+		font-size: 12px; 
+		margin-top: 2px; 
+		color: #888; 
+
+		.lu_arrow {
+			transform: rotate(45deg);
+			font-weight: 100;  
+		}
+	}
+
+	.header {
+		display: flex; 
+		height: 30px; 
+		background: #800000; 
+		padding: 10px; 
+		color: #FFF; 
+		font-size: 22px;
+		align-items: center; 
+		justify-content: space-between; 
+		font-weight: 300;  
+	}
+
+	.info {
+		flex-grow: 1; 
+		display: flex; 
+		flex-direction: column; 
+	}
+
+	.semester {
+		display: flex; 
+		min-height: 80px; 
+		// border: 1px solid black;  
+		// margin: 5px;
+		width: 100%;
+		border-bottom: 1px solid #ccc; 
+
+		.semester-hours {
+			flex: 1;
+			align-self: center; 
+			text-align: end; 
+			font-size: 20px; 
+			margin-right: 5px; 
+		}
+
+		&.summer {
+			display: none; 
+		}
+	}
+
+	.spacer {
+		width: 10px; 
+	}
+
+	.course {
+		display: flex;
+		flex-direction: column; 
+		align-items: center; 
+		margin: 10px; 
+		padding: 5px;  
+		max-width: 110px; 
+		min-width: 110px; 
+		text-align: center; 
+		border-radius: 10px; 
+		font-size: 0.7em; 
+		color: #FFF; 
+		height: 45px; 
+		cursor: pointer; 
+		background: #7b93f8;
+
+		.course-abbr {
+			font-weight: bold; 
+		}
+
+		.course-name {
+			padding: 2px;
+		}
+
+		&.core {
+			background: #53e441;
+		}
+
+		&.freshman-year {
+			background: #eb5153;
+		}
+
+		.hours-indicator {
+			position: absolute;
+			right: 3px;
+			top: 3px;
+			width: 16px; 
+			height: 16px;
+			border-radius: 15px; 
+			font-size: 1.2em; 
+			background: #aaa;
+		}
+	}
+
+	.draggable-area {
+		width: 100%; 
+		min-height: 80px; 
+	}
+
+	.DraggableTags-tag-drag {
+		cursor: default;
+	}
 }

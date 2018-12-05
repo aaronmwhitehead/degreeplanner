@@ -6,29 +6,38 @@ html {
   display: flex;
   padding: 15px;
   flex-wrap: wrap;
+  overflow: auto;
 }
 .App .main {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
   flex: 1 0 50%;
   display: flex;
 }
+.App .container {
+  flex: 0 25%;
+}
 .App .semester-list {
   display: flex;
   margin-right: 15px;
-  flex-direction: column;
   justify-content: space-between;
-  padding: 10px;
+  max-height: 95vh;
+  overflow: auto;
+  flex-wrap: wrap;
+}
+.App .semester-list .year {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 2px 0px;
+  font-size: 1.1em;
+  color: #aaa;
+  background: #eee;
 }
 .App .info-box {
-  height: 82vh;
-  flex: 0 25%;
-  align-items: flex-start;
-  flex-direction: row;
-  padding: 0;
+  height: 86vh;
 }
 .App .hours-box {
   align-items: center;
-  height: 8vh;
   margin-right: 15px;
   margin-top: 15px;
   padding: 5px;
@@ -38,13 +47,53 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex: 0 25%;
-  margin-top: 15px;
   cursor: pointer;
-  padding: 0;
+  margin-top: 3px;
+  height: 9%;
 }
 .App .fas {
   cursor: pointer;
+}
+.App .check-courses-body {
+  overflow: auto;
+}
+.App .add-content {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+.App .add-content .add-content-modal {
+  width: 25vw;
+}
+.App .add-content .add-content-modal .add-content-body {
+  width: 25vw;
+  height: 30vh;
+  background: white;
+}
+.App .add-content .add-content-modal .add-summer {
+  display: flex;
+  align-items: center;
+}
+.App .add-content .add-content-modal .add-summer .add-summer-title {
+  width: 90px;
+}
+.App .check-courses-body-info {
+  align-self: center;
+  font-size: 12px;
+  margin-top: 2px;
+  color: #888;
+}
+.App .check-courses-body-info .lu_arrow {
+  transform: rotate(45deg);
+  font-weight: 100;
 }
 .App .header {
   display: flex;
@@ -59,37 +108,72 @@ html {
 }
 .App .info {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 .App .semester {
   display: flex;
+  min-height: 80px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
 }
-.App .TEST {
+.App .semester .semester-hours {
+  flex: 1;
+  align-self: center;
+  text-align: end;
+  font-size: 20px;
+  margin-right: 5px;
+}
+.App .semester.summer {
+  display: none;
+}
+.App .spacer {
+  width: 10px;
+}
+.App .course {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
-  margin-right: 10px;
+  margin: 10px;
   padding: 5px;
-  max-width: 160px;
+  max-width: 110px;
+  min-width: 110px;
   text-align: center;
   border-radius: 10px;
-  font-size: 10px;
+  font-size: 0.7em;
   color: #FFF;
-}
-.App .TEST .TEST-abbr {
-  font-weight: bold;
-}
-.App .test1 {
+  height: 45px;
+  cursor: pointer;
   background: #7b93f8;
 }
-.App .test2 {
-  background: #a1e736;
+.App .course .course-abbr {
+  font-weight: bold;
 }
-.App .test3 {
+.App .course .course-name {
+  padding: 2px;
+}
+.App .course.core {
+  background: #53e441;
+}
+.App .course.freshman-year {
   background: #eb5153;
 }
-.App .test4 {
-  background: #f2476a;
+.App .course .hours-indicator {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 15px;
+  font-size: 1.2em;
+  background: #aaa;
+}
+.App .draggable-area {
+  width: 100%;
+  min-height: 80px;
+}
+.App .DraggableTags-tag-drag {
+  cursor: default;
 }
 
 /*# sourceMappingURL=App.css.map */

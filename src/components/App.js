@@ -1,16 +1,46 @@
 import React, { Component } from 'react';
 import '../styles//css/App.css';
+import {DraggableAreasGroup, DraggableArea} from 'react-draggable-tags';
 
-/* 
-	CheckAdd will allow the user to add courses and semesters
-	You can check that the prereq requirements are met by clicking 
-	"Check Courses"
-*/
+
+
+var data = require('../data'); 
+var new_schedule = data.degree_plans[0].courses; 
+var old_schedule = data.degree_plans[1].courses;
+var old_semesters = data.degree_plans[1].semesters; 
+var new_semesters = data.degree_plans[0].semesters; 
+var showInfo = false;
+var totalHours; 
+
+const group = new DraggableAreasGroup();
+const DraggableArea1 = group.addArea();
+
+class Summer extends Component {
+	constructor(props) {
+		super(props); 
+		this.state = {checked: false}
+		this.handleCheck = this.handleCheck.bind(this);
+	}
+
+	handleCheck() {
+		this.setState({
+			checked: !this.state.checked
+		});
+		var summerSelector = document.querySelector(".summer"+this.props.value);
+		const change = this.state.checked ? summerSelector.style.display = "none" : summerSelector.style.display = "flex"; 
+	}
+
+	render() {
+		return <div value={this.props.value}>
+				<input type="checkbox" className={this.props.className} checked={ this.state.checked } onChange={ this.handleCheck } />
+		    </div>
+	}
+}
+
 class CheckAdd extends Component {
 	constructor(props) {
 		super(props); 
-		this.state = {isToggleOn: false}; 
-
+		this.state = {isToggleOn: true}; 
 		this.toggleTabs = this.toggleTabs.bind(this);
 	}
 
@@ -18,99 +48,194 @@ class CheckAdd extends Component {
 		this.setState(state => ({
 			isToggleOn: !state.isToggleOn
 		}));
+		var contentSelector = document.querySelector(".add-content")
+		const change = this.state.isToggleOn ? contentSelector.style.visibility = "visible" : contentSelector.style.visibility = "hidden"
+		let summerList = document.querySelectorAll(".summer"); 
+		for(var i = 0; i < summerList.length; i++) {
+			var summer = i+1; 
+			if(summerList[i].childNodes[0].hasChildNodes())
+				document.querySelector(".check-summer-"+summer).disabled = true; 
+			else
+				document.querySelector(".check-summer-"+summer).disabled = false; 
+		}
 	}
 
 	render() {
+
 		let checkTab; 
 		let addTab; 
 
-		if(this.state.isToggleOn) {
-			checkTab = " "; 
-
-			addTab = 
-			<div className="add-content info">
-				<div className="add-content-header header">
-					<i class="fas fa-arrow-left" onClick={this.toggleTabs}></i>
-					<div className="add-content-title">Add Semester/Course</div>
-					<div className="extra"></div>
-				</div>
-				<div></div>
-			</div>;
-		} 
-
-		else {
-		
-			checkTab = 
+		checkTab = 
 			<div className="check-courses info">
 				<div className="check-courses-header header">
 					<i className="fas fa-plus" onClick={this.toggleTabs}></i>
 				</div>
-				<div className="add-content-body">Add a semester or course by clicking the + </div>
+				<div className="check-courses-body-info">
+					<i className="material-icons lu_arrow">arrow_left</i>
+					Add a semester or course by clicking the + 
+				</div>
 				<div className="check-courses-body">All of your classes are good.</div>
 			</div>; 
 
-			addTab = " ";
-		}
+			addTab = 
+			<div className="add-content">
+				<div className="add-content-modal">
+					<div className="add-content-header header">
+						<i className="fas fa-arrow-left" onClick={this.toggleTabs}></i>
+						<div className="add-content-title">Add Semester/Course</div>
+						<div className="spacer"></div>
+					</div>
+					<div className="add-content-body">
+						<div className="add-summer">
+							<span className="add-summer-title">Summer 1</span>
+							<Summer className="check-summer-1" value="1"/>
+						</div>
+						<div className="add-summer">
+							<span className="add-summer-title">Summer 2</span>
+							<Summer className="check-summer-2" value="2"/>
+						</div>
+						<div className="add-summer">
+							<span className="add-summer-title">Summer 3</span>
+							<Summer className="check-summer-3" value="3"/>
+						</div>
+						<div className="add-summer">
+							<span className="add-summer-title">Summer 4</span>
+							<Summer className="check-summer-4" value="4"/>
+						</div>
+						<div className="add-summer">
+							<span className="add-summer-title">Summer 5</span>
+							<Summer className="check-summer-5" value="5"/>
+						</div>
+					</div>
+				</div>
+			</div>; 
+
 	    return (
 			<div className="info-box main">	
-				{checkTab}
+				{checkTab} 
 				{addTab}
 			</div>
 	    );
   	}
 }
 
-// Each Course contains information including prereq and coreqs for the course
-class Course extends Component {
-	render() {
-		return(
-			<div className="course">Course</div>
-		);
-	}
+function getParentValueOfCourse(currID) {
+	var semesterValue = document.querySelector("#"+currID).parentNode.parentNode.parentNode.parentNode.getAttribute("value"); 
+	return semesterValue; 
 }
 
-// A Semester holds a default number of courses
-function Semester(props) {
-	return(
-		<div className={props.className}>
-			<div className="TEST test1">
-				<div className="TEST-abbr">CRSE-100</div>
-				<div className="TEST-name">Mfg. in Crse. Desn. & Analysis</div>
-			</div>
-			<div className="TEST test2">
-				<div className="TEST-abbr">CRSE-200</div>
-				<div className="TEST-name">Mfg. in Crse. Desn. & Analysis: Cool stuff</div>
-			</div>
-			<div className="TEST test3">
-				<div className="TEST-abbr">CRSE-300</div>
-				<div className="TEST-name">Learning to Code 101: An Introduction</div>
-			</div>
-			<div className="TEST test4">
-				<div className="TEST-abbr">CRSE-400</div>
-				<div className="TEST-name">How to Make an A+ in College</div>
-			</div>
-		</div>
-	); 	
+function checkCourses() {
+	var allCourses = document.querySelectorAll(".course"); 
+	var filterCourses = []; 
+	var isValid = true;
+	for(let i = 0; i < allCourses.length; i++) {
+		if(i % 2 === 0) {
+			filterCourses.push(allCourses[i]); 
+		}
+	}
+	let checkBody = document.querySelector(".check-courses-body"); 
+	checkBody.innerHTML = ""; 
+	filterCourses.forEach(course => {
+		var prereqList = course.dataset.prereqs.split(","); 
+		var coreqList = course.dataset.coreqs.split(","); 
+		var semesterValue = getParentValueOfCourse(course.id); 
+		for(let i = 0; i < prereqList.length; i++){
+			if(prereqList[i] !== "null") {
+				if(getParentValueOfCourse(prereqList[i]) >= semesterValue) {
+					isValid = false; 
+					checkBody.innerHTML += document.querySelector("#"+prereqList[i]).childNodes[0].innerHTML + " is a prereq of " + course.childNodes[0].innerHTML + "<br>"
+				}
+			}
+		}
+		for(let i = 0; i < coreqList.length; i++){
+			if(coreqList[i] !== "null") {
+				if(getParentValueOfCourse(coreqList[i]) > semesterValue) {
+					isValid = false; 
+					checkBody.innerHTML += document.querySelector("#"+coreqList[i]).childNodes[0].innerHTML + " is a coreq of " + course.childNodes[0].innerHTML + "<br>"
+				}
+			}
+		}
+	}); 
+	if(isValid) checkBody.innerHTML = "All of your classes are good."
+}
+
+function Populate(val) {
+	const courseList = old_schedule.map(i => {
+		if(i.semester == val) {
+			return i; 
+		}
+	}); 
+	var filter = courseList.filter(function (e) {
+		return e != null; 
+	}); 
+
+	return filter; 
+}
+
+function UpdateHours(semester) {
+	totalHours = 0; 
+	let currSemester = document.querySelector(semester);
+	let currCourses = currSemester.querySelectorAll(".course"); 
+
+	for(let i = 0; i < currCourses.length; i++) {
+		totalHours = +totalHours + +currCourses[i].dataset.hours; 
+	}
+	totalHours = +totalHours/2; 
+	return totalHours; 
+}
+
+class Semester extends Component {
+	constructor(props) {
+		super(props); 
+		this.state = {
+			hours: this.props.hours
+		}
+		this.updateHours = this.updateHours.bind(this); 
+	}; 
+
+	updateHours() {
+		var mySemester = "semester"+this.props.value; 
+		UpdateHours("."+CSS.escape(mySemester)); 
+		this.setState({hours: totalHours});
+	}
+
+	render() {
+		return(
+			<div className={this.props.className} value={this.props.value}>
+		    	<DraggableArea1 className="draggable-area"
+		    		initialTags = {Populate(this.props.value)}
+		    		render={({tag}) => (
+		    			<div id={tag.id} data-hours={tag.hours} data-prereqs={tag.prereqs} data-coreqs={tag.coreqs} data-semester={tag.semester} className={tag.classes}>
+		    				<span className="course-abbr">{tag.display_name}</span>
+		    				<span className="course-name">{tag.full_name}</span>
+		    				<div className="hours-indicator">{tag.hours}</div>
+		    			</div>
+		    		)}
+		    		getAddTagFunc={addTag => this.addTag = addTag}
+		    		onChange={this.updateHours}
+		    	/>
+		    	<div className="semester-hours">{this.state.hours}</div>
+		    </div>
+		); 
+	}
 }
 
 // SemesterList holds each of the semesters
 class SemesterList extends Component {
 	render() {
-		return(
-			<div className="semester-list main">
-				<Semester className="semester semester-1"/>
-				<Semester className="semester semester-2"/>
-				<Semester className="semester semester-3"/>
-				<Semester className="semester semester-4"/>
-				<Semester className="semester semester-5"/>
-				<Semester className="semester semester-6"/>
-				<Semester className="semester semester-7"/>
-				<Semester className="semester semester-8"/>
-			</div>
+		var semesterArray = []; 
+		for(var i = 0; i < old_semesters.length; i++) {
+			if(i % 3 === 0)
+				semesterArray.push(<div className="year">Year {i/3+1}</div>)
+			semesterArray.push(<Semester className={old_semesters[i].classes} value={old_semesters[i].value} hours={old_semesters[i].hours}/>); 
+		}
+		return (
+		  <div className="semester-list main"> 
+				{semesterArray}
+		  </div>
 		);
 	}
 }
-
 
 // The whole page is contained within the App
 class App extends Component {
@@ -118,14 +243,13 @@ class App extends Component {
     return(
 		<div className="App">
 			<SemesterList />
-			<CheckAdd />
-			<div className="hours-box main">Hours: </div>
-			<div className="check-courses-btn main">Check Courses</div>
+			<div className="container">
+				<CheckAdd />
+				<div className="check-courses-btn main" onClick={checkCourses}>Check Courses</div>
+			</div>
 		</div>
     );
   }
 }
-
-
 
 export default App;
