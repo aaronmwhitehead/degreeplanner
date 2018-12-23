@@ -60,6 +60,11 @@ class CheckAdd extends Component {
 		}
 	}
 
+	handleClickAdd() {
+		var sem = document.querySelector(".draggable-area"); 
+		sem.addTag({id: 1 , name: 4});
+	}
+
 	render() {
 
 		let checkTab; 
@@ -70,11 +75,15 @@ class CheckAdd extends Component {
 				<div className="check-courses-header header">
 					<i className="fas fa-plus" onClick={this.toggleTabs}></i>
 				</div>
-				<div className="check-courses-body-info">
-					<i className="material-icons lu_arrow">arrow_left</i>
+				<div className="small-info check-courses-body-info">
+					<i className="material-icons lu_arrow up">arrow_left</i>
 					Add a semester or course by clicking the + 
 				</div>
 				<div className="check-courses-body">All of your classes are good.</div>
+				<div className="small-info check-courses-btn-info">
+					<i className="material-icons lu_arrow down">arrow_left</i>
+					Check the status of your degree plan by clicking below
+				</div>
 			</div>; 
 
 			addTab = 
@@ -86,25 +95,37 @@ class CheckAdd extends Component {
 						<div className="spacer"></div>
 					</div>
 					<div className="add-content-body">
-						<div className="add-summer">
-							<span className="add-summer-title">Summer 1</span>
-							<Summer className="check-summer-1" value="1"/>
+						<div className="add-semester">
+							<div className="add-summer">
+								<span className="add-summer-title">Summer 1</span>
+								<Summer className="check-summer-1" value="1"/>
+							</div>
+							<div className="add-summer">
+								<span className="add-summer-title">Summer 2</span>
+								<Summer className="check-summer-2" value="2"/>
+							</div>
+							<div className="add-summer">
+								<span className="add-summer-title">Summer 3</span>
+								<Summer className="check-summer-3" value="3"/>
+							</div>
+							<div className="add-summer">
+								<span className="add-summer-title">Summer 4</span>
+								<Summer className="check-summer-4" value="4"/>
+							</div>
+							<div className="add-summer">
+								<span className="add-summer-title">Summer 5</span>
+								<Summer className="check-summer-5" value="5"/>
+							</div>
 						</div>
-						<div className="add-summer">
-							<span className="add-summer-title">Summer 2</span>
-							<Summer className="check-summer-2" value="2"/>
-						</div>
-						<div className="add-summer">
-							<span className="add-summer-title">Summer 3</span>
-							<Summer className="check-summer-3" value="3"/>
-						</div>
-						<div className="add-summer">
-							<span className="add-summer-title">Summer 4</span>
-							<Summer className="check-summer-4" value="4"/>
-						</div>
-						<div className="add-summer">
-							<span className="add-summer-title">Summer 5</span>
-							<Summer className="check-summer-5" value="5"/>
+						<div className="add-course">
+							<span className="user-course-name">Course</span><input type="text" className="user-course-input" name="user-course-name"/>
+							<span className="user-course-name">Hours</span><input type="text" className="user-course-input" name="user-course-hours"/>
+							<button className="user-course-submit" onClick={addNewCourse}>Submit</button>
+							<div className="inputs">
+								<input ref={r => this.input = r} />
+								<button onClick={this.handleClickAdd}>Add</button>
+							</div>
+							<div className="disclaimer">NOTE: Added courses will not have prereqs checked</div>
 						</div>
 					</div>
 				</div>
@@ -117,6 +138,10 @@ class CheckAdd extends Component {
 			</div>
 	    );
   	}
+}
+
+function addNewCourse() {
+	document.querySelector(".semester0"); 
 }
 
 function getParentValueOfCourse(currID) {
@@ -141,7 +166,7 @@ function checkCourses() {
 		var semesterValue = getParentValueOfCourse(course.id); 
 		for(let i = 0; i < prereqList.length; i++){
 			if(prereqList[i] !== "null") {
-				if(getParentValueOfCourse(prereqList[i]) >= semesterValue) {
+				if(getParentValueOfCourse(prereqList[i]) >= semesterValue && semesterValue != 0) {
 					isValid = false; 
 					checkBody.innerHTML += document.querySelector("#"+prereqList[i]).childNodes[0].innerHTML + " is a prereq of " + course.childNodes[0].innerHTML + "<br>"
 				}
@@ -149,7 +174,7 @@ function checkCourses() {
 		}
 		for(let i = 0; i < coreqList.length; i++){
 			if(coreqList[i] !== "null") {
-				if(getParentValueOfCourse(coreqList[i]) > semesterValue) {
+				if(getParentValueOfCourse(coreqList[i]) > semesterValue && semesterValue != 0) {
 					isValid = false; 
 					checkBody.innerHTML += document.querySelector("#"+coreqList[i]).childNodes[0].innerHTML + " is a coreq of " + course.childNodes[0].innerHTML + "<br>"
 				}
@@ -224,6 +249,8 @@ class Semester extends Component {
 class SemesterList extends Component {
 	render() {
 		var semesterArray = []; 
+		semesterArray.push(<div className="year">AP & DUAL CREDIT</div>)
+		semesterArray.push(<Semester className="semester semester0" value="0" hours="0"/>); 
 		for(var i = 0; i < old_semesters.length; i++) {
 			if(i % 3 === 0)
 				semesterArray.push(<div className="year">Year {i/3+1}</div>)
